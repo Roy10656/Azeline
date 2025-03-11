@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const blogCards = document.querySelectorAll(".blog-card");
+  const blogCards = document.querySelectorAll(".blog-card");
 
-    function revealCards() {
-        blogCards.forEach((card) => {
-            const cardTop = card.getBoundingClientRect().top;
-            if (cardTop < window.innerHeight - 50) {
-                card.classList.add("show");
-            }
-        });
-    }
+  function revealCards() {
+      blogCards.forEach((card) => {
+          const cardTop = card.getBoundingClientRect().top;
+          if (cardTop < window.innerHeight - 50) {
+              card.classList.add("show");
+          }
+      });
+  }
 
-    window.addEventListener("scroll", revealCards);
-    revealCards(); // Run on load
+  window.addEventListener("scroll", revealCards);
+  revealCards(); // Run on load
 });
 
 
@@ -29,10 +29,10 @@ window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please re
 
 
 window.translation = {
-  common: {
-    selectedList: '{quantity} list selected',
-    selectedLists: '{quantity} lists selected'
-  }
+common: {
+  selectedList: '{quantity} list selected',
+  selectedLists: '{quantity} lists selected'
+}
 };
 
 var AUTOHIDE = Boolean(0);

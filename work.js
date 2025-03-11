@@ -24,14 +24,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Form Submission
-
-
-
-
-
-
-
-
 // Newsletter starts
 window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
 window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
@@ -121,6 +113,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     }).then(function(response) {
         console.log('Success!', response.status, response.text);
         alert('Your message has been sent!');
+        document.getElementById('contactForm').reset();
     }, function(error) {
         console.log('Failed...', error);
         alert('Sorry, something went wrong. Please try again.');
