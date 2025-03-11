@@ -24,23 +24,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Form Submission
-const contactForm = document.getElementById('contactForm');
-const newsletterForm = document.querySelector('.newsletter-form');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Add your form submission logic here
-    alert('Thank you for your message! We will get back to you soon.');
-    contactForm.reset();
-});
 
-newsletterForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Add your newsletter subscription logic here
-    alert('Thank you for subscribing to our newsletter!');
-    newsletterForm.reset();
-});
 
+
+
+
+
+
+// Newsletter starts
+window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+window.LOCALE = 'en';
+window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+
+window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+
+window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+
+
+
+
+window.translation = {
+  common: {
+    selectedList: '{quantity} list selected',
+    selectedLists: '{quantity} lists selected'
+  }
+};
+
+var AUTOHIDE = Boolean(0);
+// Newsletter End
 // Sticky Navbar
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
@@ -84,3 +97,34 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.portfolio-item, .about-content, .contact-form').forEach((element) => {
     observer.observe(element);
 });
+
+
+// email data send start
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // alert('message sent');
+
+    // Collect form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    // Send form data using EmailJS
+    emailjs.send('service_rvdcb3r', 'template_iv1ua3x', {
+        from_name: name,
+        to_name: 'Aezmall',
+        from_email: email,
+        subject: subject,
+        message: message,
+    }).then(function(response) {
+        console.log('Success!', response.status, response.text);
+        alert('Your message has been sent!');
+    }, function(error) {
+        console.log('Failed...', error);
+        alert('Sorry, something went wrong. Please try again.');
+    });
+});
+
+// email data send end

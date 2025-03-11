@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebDev - Professional Web Development Services</title>
-    
     <link rel="stylesheet" href="our-works.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-
     <script src="script.js" defer></script>
+
+    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 </head>
 <body>
     <!-- Navbar -->
@@ -23,10 +20,10 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="https://wa.me/919382924230?text=Hello%2C%20let%20me%20know%20how%20to%20do%20this.." class="btn" target="_blank" rel="noopener">
-                    START A PROJECT
-                </a></li>
             </ul>
+            <a href="https://wa.me/919382924230?text=Hello%2C%20let%20me%20know%20how%20to%20do%20this.." class="btn" target="_blank" rel="noopener">
+                START A PROJECT
+            </a>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -117,23 +114,32 @@
                 <form id="contactForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="text" placeholder="Name" required>
+                            <input id="name" type="text" placeholder="Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email" required>
+                            <input id="email" type="email" placeholder="Email" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Subject" required>
+                        <input id="subject" type="text" placeholder="Subject" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your message" required></textarea>
+                        <textarea id="message" placeholder="Your message" required></textarea>
                     </div>
                     <button type="submit" class="btn primary">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("f7aY_8_V7SbRqXNUk"); // Replace with your Public Key from EmailJS
+    })();
+    </script>
+
+    <!-- <script src="emailjs.js"></script> -->
 
     <!-- Footer -->
     <section id="footer">
@@ -166,7 +172,8 @@
                 </div>
     
                 
-                <!-- Begin Brevo Form -->
+                                        <!-- Begin Brevo Form -->
+                        
                         <!-- START - We recommend to place the below code where you want the form in your website html  -->
                         <div class="sib-form" style="text-align: center;
                             background-color: transparent;">
@@ -215,7 +222,7 @@
                                                     <div class="form__label-row ">
 
                                                         <div class="entry__field">
-                                                            <input class="input " type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Your email address . . ." data-required="true" required />
+                                                            <input class="input " type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Your email address . . ." data-required="true" required style="color: black;"/>
                                                         </div>
                                                     </div>
 
@@ -243,22 +250,22 @@
                             </div>
                         </div>
                         <!-- End Brevo Form -->
-                        
+                
             </div>
     
             <div class="footer-socials">
                 <h3>Connect With Us</h3>
                 <div class="social-icons">
-                    <a href="#" class="social-icon facebook" title="Visit our Facebook page">
+                    <a href="#" class="social-icon facebook">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" class="social-icon twitter" title="Visit our Twitter profile">
+                    <a href="#" class="social-icon twitter">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="#" class="social-icon instagram" title="Visit our Instagram profile">
+                    <a href="#" class="social-icon instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="social-icon linkedin" title="Visit our LinkedIn page">
+                    <a href="#" class="social-icon linkedin">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
